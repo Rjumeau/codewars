@@ -1,8 +1,6 @@
 # Codewars - Kyu 6 : https://www.codewars.com/kata/58b2c5de4cf8b90723000051/ruby
-
 class GuessWho
-  def initialize(character)
-    @personnas = [{ personna: "Jean-Claude", characteristics: ["Male","Glasses","Brown eyes","Bald","White hair","Small mouth","Small nose"] },
+  PERSONNAS = [{ personna: "Jean-Claude", characteristics: ["Male","Glasses","Brown eyes","Bald","White hair","Small mouth","Small nose"] },
                     { personna: "Pierre", characteristics: ["Male","Mustache","Brown eyes","Brown hair","Big mouth","Small nose"] },
                     { personna: "Jean", characteristics: ["Male","White hair","Big nose","Big mouth","Blue eyes"]},
                     { personna: "Amelie", characteristics: ["Female","Hat","Brown hair","Small mouth","Long hair","Brown eyes","Small nose"]},
@@ -25,7 +23,9 @@ class GuessWho
                     { personna: "Pierre-Louis", characteristics: ["Male","Blue eyes","Brown hair","Small nose","Small mouth","Bald","Glasses"]},
                     { personna: "Etienne", characteristics: ["Male","Brown eyes","Blonde hair","Small nose","Small mouth","Glasses"]},
                     { personna: "Henri", characteristics: ["Male","Brown eyes","White hair","Small nose","Big mouth","Hat"]},
-                    { personna: "Damien", characteristics: ["Male","Brown eyes","Blonde hair","Small nose","Big mouth","Hat"]}]
+                    { personna: "Damien", characteristics: ["Male","Brown eyes","Blonde hair","Small nose","Big mouth","Hat"]}].freeze
+  def initialize(character)
+    @personnas = PERSONNAS
     @character = character
     @turn_count = 0
   end
