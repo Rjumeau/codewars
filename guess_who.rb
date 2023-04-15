@@ -2,7 +2,7 @@
 
 class GuessWho
   def initialize(character)
-    @characteristic = [{ personna: "Jean-Claude", characteristics: ["Male","Glasses","Brown eyes","Bald","White hair","Small mouth","Small nose"] },
+    @personnas = [{ personna: "Jean-Claude", characteristics: ["Male","Glasses","Brown eyes","Bald","White hair","Small mouth","Small nose"] },
                     { personna: "Pierre", characteristics: ["Male","Mustache","Brown eyes","Brown hair","Big mouth","Small nose"] },
                     { personna: "Jean", characteristics: ["Male","White hair","Big nose","Big mouth","Blue eyes"]},
                     { personna: "Amelie", characteristics: ["Female","Hat","Brown hair","Small mouth","Long hair","Brown eyes","Small nose"]},
@@ -43,26 +43,26 @@ class GuessWho
   private
 
   def find_personna(character)
-    @characteristic.find { |char| char[:personna] == character }
+    @personnas.find { |char| char[:personna] == character }
   end
 
   def filter_characteristic(personna, guess)
     if personna[:characteristics].include?(guess)
-      @characteristic.select! do |character|
+      @personnas.select! do |character|
         character[:characteristics].include?(guess)
       end
     else
-      @characteristic.reject! do |character|
+      @personnas.reject! do |character|
         character[:characteristics].include?(guess)
       end
     end
   end
 
   def filter_personna(guess)
-    @characteristic.reject! { |char| char[:personna] == guess } if list_personnas.include?(guess)
+    @personnas.reject! { |char| char[:personna] == guess } if list_personnas.include?(guess)
   end
 
   def list_personnas
-    @characteristic.map { |character| character[:personna] }
+    @personnas.map { |character| character[:personna] }
   end
 end
