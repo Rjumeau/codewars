@@ -1,4 +1,5 @@
-# CODE WARS CHALLENGE 6 KYU SOLUTION : https://www.codewars.com/kata/58b2c5de4cf8b90723000051/ruby
+# Codewars - Kyu 6 : https://www.codewars.com/kata/58b2c5de4cf8b90723000051/ruby
+
 class GuessWho
   def initialize(character)
     @characteristic = [{ personna: "Jean-Claude", characteristics: ["Male","Glasses","Brown eyes","Bald","White hair","Small mouth","Small nose"] },
