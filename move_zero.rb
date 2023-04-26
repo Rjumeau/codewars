@@ -2,7 +2,7 @@
 
 def moveZeros(arr)
   zero_count = arr.count(0)
-  arr.reject! {|num| num == 0}
-  zero_count.times { arr.push(0)}
+  arr.reject! { |num| num == 0 }
+  zero_count.times { arr.push(0) }
   arr
 end
