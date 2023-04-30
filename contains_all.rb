@@ -1,3 +1,5 @@
+# Day 14 - Kata 6 - codewars : https://www.codewars.com/kata/55a6c585c105a2865b000077/ruby
+
 def contains_all?(haystack, needle)
   needle.uniq.all? do |x|
     needle_type = x.class
