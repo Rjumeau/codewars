@@ -1,3 +1,5 @@
+# Day 13 - Kata 5 - Codewars : https://www.codewars.com/kata/562e6df5cf2d3908ad00019e/ruby
+
 DENSITY_CHART = {
   "H": 1.36,
   "W": 1.00,
@@ -6,8 +8,12 @@ DENSITY_CHART = {
 }
 
 def separate_liquids(glass)
-  sorted_arrs = glass.flatten.sort.chunk_while {|a, b| a == b }.to_a
-  sorted_arrs.sort_by {|arr| DENSITY_CHART[arr.first]}
-end
+  return [] if glass.empty?
 
-p separate_liquids([['H', 'H', 'W', 'O'],['W','W','O','W'],['H','H','O','O']])
+  flattened_glass = glass.flatten
+  return [flattened_glass] if flattened_glass.size == 1
+
+  densities = flattened_glass.map { |letter| DENSITY_CHART[letter.to_sym] }
+  sorted_letters = flattened_glass.sort_by.with_index { |_, i| densities[i] }
+  sorted_letters.each_slice(glass[0].size).to_a
+end
